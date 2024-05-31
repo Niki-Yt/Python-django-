@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Інформація по датчикам{% endblock %}
+
+{% block content %}
+<h1>{{ sensor.sensor_name }} Details</h1>
+<p>Location: {{ sensor.location }}</p>
+<p>Date: {{ sensor.date }}</p>
+<p>Time: {{ sensor.time }}</p>
+<p>Temp: {{ sensor.temp }}</p>
+<p>Name: {{ sensor.name }}</p>
+<p>Model: {{ sensor.model }}</p>
+<p>Model_id: {{ sensor.model_id }}</p>
+<a href="{% url 'weather_list' %}" class="btn btn-primary">Повернутись по списку датчиків</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+<!-- weather_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Датчики</title>
+</head>
+<body>
+    <h1>Список датчиків</h1>
+    <ul>
+        {% for weather in weathers %}
+            <li>{{ weather.name }} - <a href="{{weather.model_id}}" target="_blank">{{ weather.model }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
