@@ -3,13 +3,13 @@
 {% block title %}Інформація по датчикам{% endblock %}
 
 {% block content %}
-<h1>{{ sensor.sensor_name }} Details</h1>
-<p>Location: {{ sensor.location }}</p>
-<p>Date: {{ sensor.date }}</p>
-<p>Time: {{ sensor.time }}</p>
-<p>Temp: {{ sensor.temp }}</p>
-<p>Name: {{ sensor.name }}</p>
-<p>Model: {{ sensor.model }}</p>
-<p>Model_id: {{ sensor.model_id }}</p>
+<h1>Інформація про {{ weather.model}}</h1>
+<p>Локація: {{ weather.location }}</p>
+<p>Дата: {{ weather.date }}</p>
+<p>Час: {{ weather.time }}</p>
+<p>Температура: {{ weather.temp }}</p>
+<p>Назва датчику: {{ weather.name }}</p>
+<p>Модель датчику: {{ weather.model }}</p>
+<p>Посилання на датчик: <a href="{{ weather.model_id }}" target="_blank">Тиць</a></p>
 <a href="{% url 'weather_list' %}" class="btn btn-primary">Повернутись по списку датчиків</a>
 {% endblock %}

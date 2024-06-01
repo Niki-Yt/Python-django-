@@ -9,8 +9,8 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path("weathers/", weather_list, name="weather_list"),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-    path('sensors/', views.sensor_list, name='weather_list'),
-    path('sensors/<int:sensor_id>/', views.sensor_detail, name='weather_detail'),
+    path('sensors/', views.weather_list, name='weather_list'),
+    path('sensors/<int:sensor_id>/', views.weather_detail, name='weather_detail'),
     path('sensors/add/', views.add_sensor, name='add_sensor'),
     path('upload_csv/', views.upload_csv_view, name='upload_csv'),
     path('upload_csv/success/', views.upload_csv_success_view, name='upload-csv-success'),

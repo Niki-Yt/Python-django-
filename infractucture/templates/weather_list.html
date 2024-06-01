@@ -1,15 +1,15 @@
-<!-- weather_list.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Датчики</title>
-</head>
-<body>
-    <h1>Список датчиків</h1>
-    <ul>
-        {% for weather in weathers %}
-            <li>{{ weather.name }} - <a href="{{weather.model_id}}" target="_blank">{{ weather.model }}</a></li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Список датчиків{% endblock %}
+
+{% block content %}
+<h1>Сипсок датчиків</h1>
+<a href="{% url 'add_sensor' %}" class="btn btn-primary">Додати новий датчик</a>
+<ul class="list-group mt-3">
+    {% for weather in weathers %}
+        <li class="list-group-item">
+            <a href="{% url 'weather_detail' weather.id %}">{{ weather.name }}</a> у {{ weather.location }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

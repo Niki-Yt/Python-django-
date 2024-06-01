@@ -50,20 +50,20 @@ def upload_csv_success_view(request):
     return render(request, 'upload_csv_success.html')
 
 
-def sensor_list(request):
-    sensors = Weather.objects.all()
-    return render(request, 'weather_list.html', {'sensors': sensors})
+def weather_list(request):
+    weathers = Weather.objects.all()
+    return render(request, 'weather_list.html', {'weathers': weathers})
 
-def sensor_detail(request, sensor_id):
-    sensor = get_object_or_404(Weather, id=sensor_id)
-    return render(request, 'weather_detail.html', {'sensor': sensor})
+def weather_detail(request, sensor_id):
+    weathers = get_object_or_404(Weather, id=sensor_id)
+    return render(request, 'weather_detail.html', {'weather': weathers})
 
 def add_sensor(request):
     if request.method == 'POST':
-        form = Weather(request.POST)
+        form = WeatherForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('weather_list')
     else:
-        form = Weather()
+        form = WeatherForm()
     return render(request, 'add_sensor.html', {'form': form})

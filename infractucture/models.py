@@ -10,6 +10,6 @@ class Weather(models.Model):
     model_id = models.CharField(max_length=200)
 
     def __str__(self):
-        return f"{self.sensor_name} at {self.location} on {self.measurement_date} {self.measurement_time}"
+        return f"{self.name} at {self.location} on {self.date} {self.time}"
 
 # Create your models here.
